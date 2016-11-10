@@ -1,0 +1,20 @@
+{
+  "name": "swapi-especie",
+  "version": "1.0.0",
+  "description": "JS Ajax Demo",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "js",
+    "ajax",
+    "express"
+  ],
+  "author": "jazmine",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}

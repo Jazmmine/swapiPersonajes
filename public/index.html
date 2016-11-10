@@ -3,8 +3,23 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Swapi-Species</title>
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+  	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-	<h1>Hello</h1>
+	<div class="container">
+	<h1 class="center-align">Swapi-Species</h1>
+	<h3 class="left-align">Total: <span id="total" class="total">##</span></h3>
+	<div class="input-field col s12">
+	   	<select id="species">
+	    	<option value="" disabled selected>Choose your option</option>
+	      	<option class= "opciones">Option 1</option>
+	    </select>
+	</div>
+	</div>
+	<script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>

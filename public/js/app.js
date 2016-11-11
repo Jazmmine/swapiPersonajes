@@ -39,14 +39,14 @@ var selectEspecies = function(response){
    $("#species").append(especies);
 
  };
-var caracteristicasResponse = function(response,jaz){
+/*var caracteristicasResponse = function(response,jaz){
  console.log(jazmine);
   caracteristicas += templateChangeFind
         .replace("{{nombre-personaje}}",response.name);
   // console.log(caracteristicas);
 
       // .html(caracteristicas);
-};
+};*/
 
 
   $(document).ready(function() {

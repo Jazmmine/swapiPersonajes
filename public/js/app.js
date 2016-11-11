@@ -52,7 +52,7 @@ var caracteristicasResponse = function(response,jaz){
   $(document).ready(function() {
    // $('select').material_select();
     
-    $.getJSON("http://swapi.co/api/species/",selectEspecies);
+    $.getJSON("https://swapi.co/api/species/",selectEspecies);
     $("#species").change(function(){
         var idPersonaje = $(this).val().split(",");
         var urlHeader = "https://swapi.co/api/people/"; 

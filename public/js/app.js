@@ -8,14 +8,15 @@ var templateChange  = '<div class="col s12" id="lista">' +
                           '<a href= "#" data-show-url = "{{link}}" class="about card-title activator grey-text text-darken-4">Ver más sobre mí<i class="material-icons right">more_vert</i></a>' +
                         '</div>' +
                         '<div class="card-reveal">' +
-                          '<span class="card-title grey-text text-darken-4 nombre">{{nombre-personaje}}<i class="material-icons right">close</i></span>' +
-                          '<p>Here is some more information about this product that is only revealed once clicked on.</p>' +
-                        '</div>' +
+                        '</div>'+
                       '</div>' +
                   '</div>';
-
+var templateChangeFind =  
+                          '<span class="card-title grey-text text-darken-4 nombre">{{nombre-personaje}}<i class="material-icons right">close</i></span>' +
+                          '<p>Here is some more information about this product that is only revealed once clicked on.</p>';
+                    
 var respuesta =null;
-var caracteristicas = "";
+
 var selectEspecies = function(response){
  //console.log(response);
   respuesta = response;
@@ -38,12 +39,13 @@ var selectEspecies = function(response){
    $("#species").append(especies);
 
  };
-var caracteristicasResponse = function(response){
-  console.log(response);
-  caracteristicas += templateChange
+var caracteristicasResponse = function(response,jaz){
+ console.log(jazmine);
+  caracteristicas += templateChangeFind
         .replace("{{nombre-personaje}}",response.name);
-   console.log(caracteristicas);
-        $("#lista").html(caracteristicas);
+  // console.log(caracteristicas);
+
+      // .html(caracteristicas);
 };
 
 
@@ -51,7 +53,6 @@ var caracteristicasResponse = function(response){
    // $('select').material_select();
     
     $.getJSON("http://swapi.co/api/species/",selectEspecies);
-    $(".personajes").hide();
     $("#species").change(function(){
         var idPersonaje = $(this).val().split(",");
         var urlHeader = "http://swapi.co/api/people/"; 
@@ -69,14 +70,20 @@ var caracteristicasResponse = function(response){
           // console.log(personajes);
             }
           });
-          $(".personajes").show();
           $("#lista").html(personajes);
       });     
 	$(".personajes").on("click", ".about",function(e){
 		e.preventDefault();    
-		 var links = $(".about").attr("data-show-url");
-     console.log(links);
-     $.getJSON(links, caracteristicasResponse);
+		 var links = $(this).attr("data-show-url");
+     var divReveal = $(this).parent().parent().find(".card-reveal");
+     var caracteristicas = "";
+     console.log(divReveal);
+     $.getJSON(links, function(response){
+        caracteristicas += templateChangeFind
+              .replace("{{nombre-personaje}}",response.name);
+        console.log(links+':'+response.name);
+        divReveal.html(caracteristicas);
+      });
 
 	});
 

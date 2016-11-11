@@ -55,7 +55,7 @@ var caracteristicasResponse = function(response,jaz){
     $.getJSON("http://swapi.co/api/species/",selectEspecies);
     $("#species").change(function(){
         var idPersonaje = $(this).val().split(",");
-        var urlHeader = "http://swapi.co/api/people/"; 
+        var urlHeader = "https://swapi.co/api/people/"; 
         var personajes = "";      
      //   console.log(idPersonaje);
         $.each(idPersonaje,function(i,personaje){

@@ -1,3 +1,7 @@
 #species{
 	display: block;
 }
+
+.personajes{
+	border: 2px solid black;
+}
